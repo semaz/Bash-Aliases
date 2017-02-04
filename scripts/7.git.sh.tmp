@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+alias g='git'
+alias gr='git rm -rf'
+alias gs='git status'
+alias ga='g add'
+alias gc='git commit -m'
+alias gp='git push origin master'
+alias gl='git pull origin master'
