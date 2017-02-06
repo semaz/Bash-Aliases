@@ -17,6 +17,7 @@ alias finderHiddenHide='defaults write com.apple.finder ShowAllFiles FALSE'
 
 #mkdir
 alias mkdir='mkdir -pv'
+alias rmdir='rm -rf'
 
 mcd () {
     mkdir $1;
