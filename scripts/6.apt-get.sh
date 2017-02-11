@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+alias apt='sudo apt-get'
 alias update='sudo apt-get update  --yes'
 alias upgrade='sudo apt-get upgrade'
 alias install='sudo apt-get install --yes'
