@@ -4,6 +4,7 @@
 export PATH=/usr/local/bin:$PATH
 
 # COLOR
+force_color_prompt=yes
 export LS_OPTIONS='--color=auto'
 export CLICOLOR=1
 export TERM="xterm-color"
