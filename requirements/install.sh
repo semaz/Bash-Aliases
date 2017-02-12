@@ -14,6 +14,8 @@ install_app () {
 # Brew
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 brew tap homebrew/dupes
+brew install coreutils
+brew install findutils
 
 # bash-completion
 brew install bash-completion
@@ -21,16 +23,13 @@ ln -s /Applications/Docker.app/Contents/Resources/etc/docker.bash-completion /us
 ln -s /Applications/Docker.app/Contents/Resources/etc/docker-machine.bash-completion /usr/local/etc/bash_completion.d/docker-machine.bash-completion
 ln -s /Applications/Docker.app/Contents/Resources/etc/docker-compose.bash-completion /usr/local/etc/bash_completion.d/docker-compose.bash-completion
 
-# Wget
-install_app "wget" "brew install wget";
-
-# Curl
+install_app "ssh-copy-id" "brew install ssh-copy-id";
+install_app "wget" "brew install wget --with-iri";
 install_app "curl" "brew install curl";
 
 # node
 install_app "node" "brew install node --with-full-icu";
-
-instbash 'if which rbenv > /dev/null; then eval "$(rbenv init -)"' "Node init";
+bashinst 'if which rbenv > /dev/null; then eval "$(rbenv init -)"' "Node init";
 
 # babel
 npm install babel-cli
@@ -51,4 +50,6 @@ curl https://raw.githubusercontent.com/scopatz/nanorc/master/install.sh | sh
 # Composer
 install_app "composer" "curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/bin --filename=composer";
 
-exec bash -l;
+brew cleanup
+
+reloadBash;

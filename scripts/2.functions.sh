@@ -2,9 +2,23 @@
 
 alias c='clear'
 
+alias g='git'
+
+alias reloadBash="exec $SHELL -l"
+
+# Detect which `ls` flavor is in use
+if ls --color > /dev/null 2>&1; then # GNU `ls`
+	colorflag="--color"
+else # OS X `ls`
+	colorflag="-G"
+fi
+
 #ls
+alias ls="ls ${colorflag}"
 alias l.='ls -d .*'
 alias ll='ls -la'
+# List only directories
+alias lsd="ls -lF | grep --color=never '^d'"
 
 # grep
 alias grep='grep --color=auto'
@@ -15,9 +29,23 @@ alias fgrep='fgrep --color=auto'
 alias root='sudo -i'
 alias su='sudo -i'
 
+# get rc
+get_rc_path(){
+    if [ -f "~/.bashrc" ]; then
+        echo ".bashrc"
+    else
+        echo ".bash_rc"
+    fi
+}
+
 # bash
-alias bashsrc='source ~/.bash_rc'
-alias bashedit='nano ~/.bash_rc && source ~/.bash_rc'
+alias bashsrc="source ~/$(get_rc_path)"
+alias bashedit='nano ~/$(get_rc_path) && source ~/$(get_rc_path)'
+bashinst(){
+    if ! grep -q "$1" ~/$(get_rc_path); then
+        echo "\n# $2 \n$1; fi" >> get_rc_path
+    fi;
+}
 
 # ps
 alias ps2='ps -ef | grep -v $$ | grep -i '
@@ -33,15 +61,13 @@ alias composer='php /usr/local/bin/composer'
 
 command_exists () { type "$1" &> /dev/null ; }
 
-instbash(){
-    if ! grep -q "$1" ~/.bash_rc; then
-        echo "\n# $2 \n$1; fi" >> ~/.bash_rc;
-    fi;
+# find
+f() {
+  find . -name "*$1*"
 }
 
-# find
-alias qfind="find . -name "
-#function f {
-#	arg_path=$1 && shift
-#	find $arg_path -wholename "*/path-to-ignore/*" -prune -o $* -print
-#}
+# Allows you to search for any text in any file recursively.
+# Usage: ft "my string" *.php
+ft() {
+  find . -name "$2" -exec grep -il "$1" {} \;
+}

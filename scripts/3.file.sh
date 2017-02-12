@@ -7,6 +7,9 @@ alias numFiles='echo $(ls -1 | wc -l)'
 alias ~="cd ~"
 alias cd..='cd ..'
 alias ..='cd ..'
+alias ...='cd ../../'
+alias ....='cd ../../../'
+alias .....='cd ../../../../'
 
 cdl() { cd "$@"; ls; }
 cdla() { cd "$@"; ls -la; }
