@@ -1,10 +1,21 @@
 #!/usr/bin/env bash
 
+# find
+f() {
+  find . -name "*$1*"
+}
+
+# Allows you to search for any text in any file recursively.
+# Usage: ft "my string" *.php
+#ft() {
+#  find . -name "$2" -exec grep -il "$1" {} \;
+#}
+
 alias edit='open -e'
 alias numFiles='echo $(ls -1 | wc -l)'
 
 # cd
-alias ~="cd ~"
+alias ~='cd ~'
 alias cd..='cd ..'
 alias ..='cd ..'
 alias ...='cd ../../'

@@ -40,7 +40,7 @@ get_rc_path(){
 
 # bash
 alias bashsrc="source ~/$(get_rc_path)"
-alias bashedit='nano ~/$(get_rc_path) && source ~/$(get_rc_path)'
+alias bashedit="nano ~/$(get_rc_path) && source ~/$(get_rc_path)"
 bashinst(){
     if ! grep -q "$1" ~/$(get_rc_path); then
         echo "\n# $2 \n$1; fi" >> get_rc_path
@@ -60,14 +60,3 @@ alias diff='colordiff'
 alias composer='php /usr/local/bin/composer'
 
 command_exists () { type "$1" &> /dev/null ; }
-
-# find
-f() {
-  find . -name "*$1*"
-}
-
-# Allows you to search for any text in any file recursively.
-# Usage: ft "my string" *.php
-ft() {
-  find . -name "$2" -exec grep -il "$1" {} \;
-}
