@@ -65,7 +65,6 @@ Description of all settings.
 `trace` - mtr<br>
 `openPorts` - print all open ports<br>
 `edithosts` - 'sudo nano /etc/hosts'<br>
-`c` - clear<br>
 
 #### apt ####
 
