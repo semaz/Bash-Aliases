@@ -44,7 +44,7 @@ alias bashsrc="source ~/$(get_rc_path)"
 alias bashedit="nano ~/$(get_rc_path) && source ~/$(get_rc_path)"
 bashinst(){
     if ! grep -q "$1" ~/$(get_rc_path); then
-        echo "\n# $2 \n$1; fi" >> get_rc_path
+        echo "\n# $2 \n$1" >> ~/$(get_rc_path)
     fi;
 }
 
