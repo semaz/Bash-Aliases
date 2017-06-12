@@ -14,6 +14,8 @@ f() {
 alias edit='open -e'
 alias numFiles='echo $(ls -1 | wc -l)'
 
+alias dirspace='du -ah --max-depth=1 | sort -hr -T .'
+
 # cd
 alias ~='cd ~'
 alias cd..='cd ..'
