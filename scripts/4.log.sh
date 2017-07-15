@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 
-alias tf='tail-func'
+alias tf='tailfunc'
 
-tail-func() {
+tailfunc() {
     if command_exists multitail; then
         multitail -c "$@"
     else
-        tailf -f "$@"
+        tail -f "$@"
     fi
 }
