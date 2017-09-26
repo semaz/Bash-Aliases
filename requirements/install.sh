@@ -47,7 +47,7 @@ brew install nano
 curl https://raw.githubusercontent.com/scopatz/nanorc/master/install.sh | sh
 
 # Composer
-install_app "composer" "curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/bin --filename=composer";
+install_app "composer" "curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer";
 
 brew cleanup
 
