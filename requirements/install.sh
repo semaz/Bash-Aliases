@@ -13,7 +13,6 @@ install_app () {
 
 # Brew
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-brew tap homebrew/dupes
 brew install coreutils
 brew install findutils
 
