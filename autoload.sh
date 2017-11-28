@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
 
-SCRIPTS_PATH=$(dirname "${BASH_SOURCE}")
-
-for f in $SCRIPTS_PATH/scripts/*.sh
+for f in $(dirname "${0}")/scripts/*.sh
 do
 	source "$f";
 done
