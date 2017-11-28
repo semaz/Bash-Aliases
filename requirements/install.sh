@@ -25,6 +25,7 @@ ln -s /Applications/Docker.app/Contents/Resources/etc/docker-compose.bash-comple
 install_app "ssh-copy-id" "brew install ssh-copy-id";
 install_app "wget" "brew install wget --with-iri";
 install_app "curl" "brew install curl";
+brew link --force curl
 
 # node
 install_app "node" "brew install node --with-full-icu";
