@@ -27,7 +27,6 @@ alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 
 #sudo
-alias root='sudo -i'
 alias su='sudo -i'
 
 # get rc
