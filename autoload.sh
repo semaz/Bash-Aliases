@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-for f in $(dirname "${0}")/scripts/*.sh
+for f in $(dirname "${BASH_SOURCE}")/scripts/*.sh
 do
 	source "$f";
 done

@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+alias tm='tmux attach || tmux new -s main'
+
+alias apt='sudo apt-get'
+
 alias c='clear'
 
 alias g='git'
