@@ -5,7 +5,7 @@ A list of useful bash aliases.
 ## Install ##
 
 1. `git clone https://github.com/DevCreel/Bash-Aliases ~/BashAliases`
-2. `cd && sh BashAliases/install.sh`
+2. `cd && bash BashAliases/install.sh`
 
 ## Wiki ##
 
@@ -17,14 +17,10 @@ Description of all settings.
 
 `c` - clear<br>
 `g` - git<br>
-`reloadBash` - exec $SHELL -l<br>
 `l.` - list of hidden files<br>
 `ll` - list of all files<br>
 `lsd` - list only directories<br>
 `root`,`sudo` - sudo -i<br>
-`bashsrc` - source bashrc file<br>
-`bashedit` - edit and then source bashrc file<br>
-`bashinst` - add string to bashrc file<br>
 `ps2` - 'ps -ef | grep -v $$ | grep -i '<br>
 `psg` - 'ps aux | grep -v grep | grep -i -e VSZ -e'<br>
 `psme` - 'ps -ef | grep $USER --color=always '<br>

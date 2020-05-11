@@ -24,10 +24,6 @@ install_app "wget" "brew install wget --with-iri";
 install_app "curl" "brew install curl";
 brew link --force curl
 
-# node
-# install_app "node" "brew install node --with-full-icu";
-# bashinst 'if which rbenv > /dev/null; then eval "$(rbenv init -)"' "Node init";
-
 # babel
 # npm install babel-cli
 # npm install babel-preset-es2015 --save --no-bin-links
@@ -48,5 +44,3 @@ curl https://raw.githubusercontent.com/scopatz/nanorc/master/install.sh | sh
 install_app "composer" "curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer";
 
 brew cleanup
-
-reloadBash;
