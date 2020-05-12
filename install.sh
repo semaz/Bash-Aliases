@@ -11,6 +11,7 @@ then
 fi;
 
 tee -a ~/$(get_rc_path) >/dev/null <<EOF
+
 # BashScripts autoload
 source $SCRIPTS_PATH/autoload.sh
 EOF
