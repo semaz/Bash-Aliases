@@ -33,7 +33,10 @@ alias su='sudo -i'
 
 # get rc
 get_rc_path() {
-  if [ -f ~/.bash_profile ]
+  if [ -f ~/.bash_aliases ]
+  then
+     echo ".bash_aliases";
+  elif [ -f ~/.bash_profile ]
   then
      echo ".bash_profile";
   elif [ -f ~/.bash_rc ]
