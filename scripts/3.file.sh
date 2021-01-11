@@ -7,12 +7,11 @@ f() {
 
 # Allows you to search for any text in any file recursively.
 # Usage: ft "my string" *.php
-#ft() {
-#  find . -name "$2" -exec grep -il "$1" {} \;
-#}
+ft() {
+  find . -name "$2" -exec grep -il "$1" {} \;
+}
 
-alias copy='pbcopy'
-alias paste='pbpaste'
+alias fixEol='sed -i "s/\r$//"'
 
 alias edit='open -e'
 alias numFiles='echo $(ls -1 | wc -l)'
@@ -30,12 +29,7 @@ alias ...='cd ../../'
 alias ....='cd ../../../'
 alias .....='cd ../../../../'
 
-cdl() { cd "$@"; ls; }
-cdla() { cd "$@"; ls -la; }
-
-# finder
-alias finderHiddenShow='defaults write com.apple.finder ShowAllFiles TRUE'
-alias finderHiddenHide='defaults write com.apple.finder ShowAllFiles FALSE'
+cdl() { cd "$@"; ll; }
 
 #mkdir
 alias mkdir='mkdir -pv'
@@ -45,9 +39,6 @@ mcd () {
     mkdir $1;
     cd $1
 }
-
-# DS
-alias cleanupDS="find . -type f -name '*.DS_Store' -ls -delete"
 
 # archive
 function extract {
