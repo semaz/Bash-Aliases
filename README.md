@@ -52,7 +52,7 @@ Description of all settings.
 
 #### log ####
 
-`tf` - run tailf or multitail (if installed)<br>
+`tf` - run tail -f<br>
 
 #### network ####
 

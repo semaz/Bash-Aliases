@@ -13,6 +13,8 @@ ft() {
 
 alias fixEol='sed -i "s/\r$//"'
 
+alias tf='tail -f'
+
 alias edit='open -e'
 alias numFiles='echo $(ls -1 | wc -l)'
 
