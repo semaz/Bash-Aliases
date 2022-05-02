@@ -62,6 +62,9 @@ alias diff='colordiff'
 
 # php
 alias cmp='composer'
+alias cmpdu='composer dump-autoload'
+alias cmpin='composer install'
+alias cmpup='composer update -W'
 alias sf='php bin/console'
 alias cept='php vendor/bin/codecept'
 alias phinx='php vendor/bin/phinx'
