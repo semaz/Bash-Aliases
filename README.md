@@ -4,7 +4,7 @@ A list of useful bash aliases.
 
 ## Install ##
 
-1. `git clone https://github.com/DevCreel/Bash-Aliases ~/BashAliases`
+1. `git clone https://github.com/DevCreel/BashAliases ~/BashAliases`
 2. `cd && bash BashAliases/install.sh`
 
 ## Wiki ##
