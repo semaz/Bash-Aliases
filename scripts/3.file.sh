@@ -18,7 +18,10 @@ alias tf='tail -f'
 alias edit='open -e'
 alias numFiles='echo $(ls -1 | wc -l)'
 
-alias rmZoneIdentifier="find . -name '*Zone.Identifier' -type f -delete"
+rmFileRecursively() {
+  find ./ -name "*$1*" -print0 | xargs -0 -I {} /bin/rm -rf "{}"
+}
+alias rmZoneIdentifier='rmFileRecursively "Zone.Identifier"'
 
 alias size='du -sh'                             # get folder size
 alias sizer='du -h -c'                          # get and print folder size for all folders, recursively
