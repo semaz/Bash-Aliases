@@ -2,7 +2,7 @@
 
 alias tm='tmux attach || tmux new -s main'
 
-alias apt='sudo apt-get'
+alias apt='sudo apt'
 
 alias c='clear'
 
@@ -31,24 +31,42 @@ alias fgrep='fgrep --color=auto'
 #sudo
 alias su='sudo -i'
 
-# get rc
-get_rc_path() {
-  if [ -f ~/.bash_aliases ]
-  then
-     echo ".bash_aliases";
-  elif [ -f ~/.bash_profile ]
-  then
-     echo ".bash_profile";
-  elif [ -f ~/.bash_rc ]
-  then
-     echo ".bash_rc";
-  elif [ -f ~/.bashrc ]
-  then
-     echo ".bashrc";
-  else
-     echo "Can't find bach config file";
-     exit 1;
-  fi
+get_config_path() {
+  case $SHELL in
+  */zsh)
+     if [ -f ~/.zshrc ]
+        then
+           echo ".zshrc";
+        elif [ -f ~/.zprofile ]
+        then
+           echo ".zprofile";
+        else
+           echo "Can't find zsh config file";
+           exit 1;
+        fi
+     ;;
+  */bash)
+     if [ -f ~/.bash_aliases ]
+        then
+           echo ".bash_aliases";
+        elif [ -f ~/.bash_profile ]
+        then
+           echo ".bash_profile";
+        elif [ -f ~/.bash_rc ]
+        then
+           echo ".bash_rc";
+        elif [ -f ~/.bashrc ]
+        then
+           echo ".bashrc";
+        else
+           echo "Can't find bash config file";
+           exit 1;
+        fi
+     ;;
+  *)
+    echo "Unknown shell";
+    exit 1;
+  esac
 }
 
 # ps
