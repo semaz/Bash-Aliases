@@ -8,6 +8,16 @@ force_color_prompt=yes
 export CLICOLOR=1
 #export PS1='\[\e[0;33m\]\u\[\e[0m\]@\[\e[0;32m\]\h\[\e[0m\]:\[\e[0;34m\]\w\[\e[0m\]\$ '
 
+echo $SHELL
+case $SHELL in
+  */zsh)
+     PS1='%B%F{yellow}%n%f@%F{green}%m%f:%F{blue}%~%f%b '
+     ;;
+  */bash)
+     export PS1='\[\e[0;33m\]\u\[\e[0m\]@\[\e[0;32m\]\h\[\e[0m\]:\[\e[0;34m\]\w\[\e[0m\]\$ '
+     ;;
+  esac
+
 # EDITOR
 export EDITOR=$(which nano)
 
